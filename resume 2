@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vedica Gairola - Software Engineer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        /* Navigation */
+        .nav {
+            background-color: #1a237e;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #90caf9;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+            color: white;
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin-bottom: 1rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s;
+        }
+
+        .contact-link:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            color: #1a237e;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #1a237e;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .project-title {
+            color: #1a237e;
+            margin-bottom: 1rem;
+        }
+
+        .project-tech {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+
+        .project-link {
+            color: #1a237e;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-title {
+            color: #1a237e;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-item {
+            padding: 0.3rem 0;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .education-title {
+            font-weight: bold;
+            color: #1a237e;
+        }
+
+        .education-details {
+            color: #666;
+        }
+
+        /* Responsibilities */
+        .responsibility-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .responsibility-title {
+            font-weight: bold;
+            color: #1a237e;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a237e;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-list {
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem;
+            }
+
+            .header {
+                padding: 6rem 1rem 3rem;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <ul class="nav-list">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#responsibilities" class="nav-link">Responsibilities</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="header" id="about">
+        <img src="/api/placeholder/150/150" alt="Vedica Gairola" class="profile-img">
+        <h1>Vedica Gairola</h1>
+        <p>Software Engineering Student</p>
+        <p>2K22/SE/191</p>
+        <div class="contact-links">
+            <a href="mailto:GAIROLAVEDICA@GMAIL.COM" class="contact-link">
+                <i class="fas fa-envelope"></i>
+                GAIROLAVEDICA@GMAIL.COM
+            </a>
+            <a href="tel:+919311070175" class="contact-link">
+                <i class="fas fa-phone"></i>
+                +91 9311070175
+            </a>
+            <a href="#" class="contact-link">
+                <i class="fab fa-github"></i>
+                GitHub
+            </a>
+            <a href="#" class="contact-link">
+                <i class="fab fa-linkedin"></i>
+                LinkedIn
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Education Section -->
+        <section class="section" id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <h3 class="education-title">B. TECH (Software Engineering)</h3>
+                <p class="education-details">Delhi Technological University, New Delhi | 2022-2026</p>
+                <p class="education-details">CGPA: 8.0125</p>
+            </div>
+            <div class="education-item">
+                <h3 class="education-title">AISSCE/CBSE (Class XII)</h3>
+                <p class="education-details">Modern Public School | 2020</p>
+                <p class="education-details">Percentage: 95%</p>
+            </div>
+            <div class="education-item">
+                <h3 class="education-title">AISSCE/CBSE (Class X)</h3>
+                <p class="education-details">Modern Public School | 2018</p>
+                <p class="education-details">Percentage: 94%</p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section" id="projects">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3 class="project-title">Blog Website-Blogify</h3>
+                    <p>Developed a web application that allows users to write, update, delete, and view blogs, offering complete CRUD functionality.</p>
+                    <p class="project-tech">Tech Stack: HTML, CSS, JavaScript, Bootstrap, NodeJS, ExpressJS, jQuery</p>
+                    <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">Capstone-Portfolio-Project</h3>
+                    <p>A Portfolio front-end website showcasing professional work and achievements.</p>
+                    <p class="project-tech">Tech Stack: HTML, CSS, Bootstrap</p>
+                    <a href="#" class="project-link">View Website <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">Family-Travel-Tracker</h3>
+                    <p>Built a full-stack web application for tracking family members' visited countries on a world map.</p>
+                    <p class="project-tech">Tech Stack: HTML, CSS, PostgreSQL, JavaScript, NodeJS, ExpressJS</p>
+                    <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">Emotion Detection</h3>
+                    <p>Created a machine learning-based image processing system to detect faces and classify emotions.</p>
+                    <p class="project-tech">Tech Stack: Python, OpenCV</p>
+                    <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">Stock-Trend-Prediction Model</h3>
+                    <p>Developed a model to predict stock closing prices using historical data analysis.</p>
+                    <p class="project-tech">Tech Stack: Python, Scikit Learn, NumPy, pandas</p>
+                    <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section" id="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-title">Languages</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item">Proficient in C++, C, HTML, CSS</li>
+                        <li class="skill-item">Familiar with Python, Java, JavaScript</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-title">Framework, Utilities, and Database</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item">NodeJS, Postman, SQL, PostgreSQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-title">Coursework</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item">Object Oriented Programming</li>
+                        <li class="skill-item">Operating Systems</li>
+                        <li class="skill-item">Database Management Systems</li>
+                        <li class="skill-item">Data Structures and Algorithms</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-title">Additional Skills</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item">Web Development</li>
+                        <li class="skill-item">Linux</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Responsibilities Section -->
+        <section class="section" id="responsibilities">
+            <h2 class="section-title">Position of Responsibility</h2>
+            <div class="responsibility-item">
+                <h3 class="responsibility-title">Class Coordinator Co-Head (2022-Present)</h3>
+                <p>Leading efforts in an English learner's society focused on enhancing personality development and communication skills. Responsible for organizing activities and coordinating class sessions.</p>
+            </div>
+            <div class="responsibility-item">
+                <h3 class="responsibility-title">Organizing Team of BFF Hackathon (2022-23)</h3>
+                <p>Contributed to organizing a hackathon conducted by the Autonomous Underwater Vehicle Tech Team at Delhi Technological University (DTU).</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 Vedica Gairola. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add active class to nav links on scroll
+        window.addEventListener('scroll', function() {
+            let sections = document.querySelectorAll('section');
+            let navLinks = document.querySelectorAll('.nav-link');
+            
+            sections.forEach(section => {
+                let top = section.offsetTop - 100;
+                let bottom = top + section.offsetHeight;
+                let scroll = window.scrollY;
+                let id = section.getAttribute('id');
+                
+                if (scroll >= top && scroll < bottom) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
